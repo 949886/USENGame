@@ -110,7 +110,7 @@ public static class PreferencesStorage
             PlayerPrefs.DeleteKey(key);
             PlayerPrefs.Save();
 #if UNITY_WEBGL
-            WebGLUtility.FlushPersist();
+            // WebGLUtility.FlushPersist();
 #endif
         }
     }
