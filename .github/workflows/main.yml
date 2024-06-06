@@ -3,15 +3,12 @@ name: Build project
 on: [push, pull_request]
 
 jobs:
-  main:
-    name: Main
-    runs-on: ubuntu-latest
-    steps:
-      # Build project
-      build:
-        name: Build project
-        uses: ./.github/workflows/build.yml
-      # Create Release
-      release:
-        name: Create Release
-        uses: ./.github/workflows/release.yml
+  # Build project
+  build:
+    name: Build project
+    uses: ./.github/workflows/build.yml
+  # Create Release
+  release:
+    name: Create Release
+    needs: build
+    uses: ./.github/workflows/release.yml
